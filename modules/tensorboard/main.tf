@@ -101,7 +101,7 @@ resource "google_compute_global_forwarding_rule" "tensorboard" {
   project    = var.gcp_project
   port_range = "443"
   target     = google_compute_target_https_proxy.tensorboard.self_link
-  ip_address = data.google_compute_global_address.tensorboard-ip.address
+  ip_address = data.google_compute_global_address.tensorboard-ip.self_link
 }
 
 resource "google_compute_firewall" "tensorboard" {
