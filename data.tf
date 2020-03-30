@@ -9,7 +9,7 @@ provider "google" {
 data "google_service_account" "tf_account" {
   provider   = "google.token-access"
   project    = var.gcp_project
-  account_id = "jarvis"
+  account_id = var.service_account_id
 }
 
 data "google_service_account_access_token" "default" {
