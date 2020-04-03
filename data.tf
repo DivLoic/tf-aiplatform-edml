@@ -7,13 +7,13 @@ provider "google" {
 }
 
 data "google_service_account" "tf_account" {
-  provider   = "google.token-access"
+  provider   = google.token-access
   project    = var.gcp_project
   account_id = var.service_account_id
 }
 
 data "google_service_account_access_token" "default" {
-  provider               = "google.token-access"
+  provider               = google.token-access
   target_service_account = data.google_service_account.tf_account.email
   scopes = [
     "userinfo-email",

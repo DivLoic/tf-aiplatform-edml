@@ -5,7 +5,7 @@ resource "google_compute_network" "ai_platform" {
 }
 
 resource "google_compute_firewall" "main-ssh-access" {
-  name    = "ssh-access"
+  name    = "aiplatform-ssh-firewall"
   project = var.gcp_project
   network = google_compute_network.ai_platform.name
   allow {
