@@ -29,8 +29,8 @@ module "mlflow" {
 module "jupyter" {
   source        = "./modules/jupyter"
   gcp_project   = var.gcp_project
-  gcp_region    = "europe-west1"
-  gcp_zone      = "europe-west1-b"
+  gcp_region    = "us-west1"
+  gcp_zone      = "us-west1-b"
   network       = google_compute_network.ai_platform.id
   notebook_name = "edml"
   machine_type  = "n1-standard-8"
