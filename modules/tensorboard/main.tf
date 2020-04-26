@@ -48,10 +48,10 @@ resource "google_compute_health_check" "tensorboard" {
   name    = "tensorboard-http-health-check"
   project = var.gcp_project
 
-  healthy_threshold   = 3
-  unhealthy_threshold = 3
-  check_interval_sec  = 5
-  timeout_sec         = 3
+  healthy_threshold   = 1
+  unhealthy_threshold = 10
+  check_interval_sec  = 60
+  timeout_sec         = 20
 
   http_health_check {
     port         = "80"

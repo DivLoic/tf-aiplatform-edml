@@ -10,6 +10,7 @@ pip3 install tensorflow==1.15 tensorboard==1.15
 
 cat > /usr/sbin/tensorboard-sync.sh <<- "EOF"
 #!/usr/bin/env bash
+echo "crontab is working... for real!" >> /is-crontab-working.txt
 gsutil -m rsync -d -r gs://edml/ai-platform/models/ /root/tensorboard/
 EOF
 
